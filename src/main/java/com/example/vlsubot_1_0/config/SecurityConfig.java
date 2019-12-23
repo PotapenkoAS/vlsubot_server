@@ -5,6 +5,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import static com.example.vlsubot_1_0.Constants.ROLE_ADMIN;
 import static com.example.vlsubot_1_0.Constants.ROLE_STUDENT;
 
 @Configuration
@@ -17,11 +18,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
-                .antMatchers("/home").permitAll()
-                .antMatchers("/").permitAll()
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/content/**").permitAll()
                 .antMatchers("/rest/**").permitAll()
+                .antMatchers("/home").hasRole(ROLE_ADMIN)
+                .antMatchers("/").hasRole(ROLE_ADMIN)
                 .antMatchers("/rest/message").hasRole(ROLE_STUDENT)
                 .anyRequest().authenticated()
                 .and()

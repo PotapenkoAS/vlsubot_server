@@ -8,11 +8,11 @@ public class HomeController {
 
     @GetMapping("/")
     public String getBaseHome(){
-        return "redirect:/home";
+        return "redirect:/feed";
     }
 
-    @GetMapping("/home")
-    public String getHome(){
+    @GetMapping("/feed")
+    public String getFeed(){
         return "home";
     }
 }

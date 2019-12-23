@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Login</title>
+    <base href="/">
+    <link href="/content/style.css" rel="stylesheet">
+    <style>
+        a {
+            color: #fff;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        body:before {
+            background: 0;
+        }
+    </style>
+</head>
+<body>
+
+<form method="post">
+    <div class="containerLogin">
+        <form>
+            <span class="TextLogin"><p>Авторизация</p></span>
+            <input type="text" style="display: none">
+            <div class="dws-input">
+                <input type="text" name="username" placeholder="Введите логин">
+            </div>
+            <div class="dws-input">
+                <input type="password" name="password" placeholder="Введите пароль">
+            </div>
+            <input class="dws-submit" type="submit" name="submit" value="ВОЙТИ"><br/>
+            <a href="/registration">Зарегистрироваться</a>
+        </form>
+    </div>
+</form>
+</body>
+</html>
