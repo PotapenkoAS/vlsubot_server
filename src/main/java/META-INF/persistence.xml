@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="NewPersistenceUnit">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.example.vlsubot_1_0.model.entity.Admin</class>
+        <class>com.example.vlsubot_1_0.model.entity.Department</class>
+        <class>com.example.vlsubot_1_0.model.entity.StudentGroup</class>
+        <class>com.example.vlsubot_1_0.model.entity.GroupLesson</class>
+        <class>com.example.vlsubot_1_0.model.entity.Institute</class>
+        <class>com.example.vlsubot_1_0.model.entity.LessonSchedule</class>
+        <class>com.example.vlsubot_1_0.model.entity.Room</class>
+        <class>com.example.vlsubot_1_0.model.entity.Student</class>
+        <class>com.example.vlsubot_1_0.model.entity.Teacher</class>
+        <class>com.example.vlsubot_1_0.model.entity.User</class>
+        <class>com.example.vlsubot_1_0.model.entity.FeedItem</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/vlsudb"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/fitness_club?serverTimezone=UTC"/>
+            <property name="openjpa.ConnectionDriverName" value="com.mysql.cj.jdbc.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
