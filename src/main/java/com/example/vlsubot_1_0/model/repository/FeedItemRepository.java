@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public interface FeedItemRepository extends CrudRepository<FeedItem, Integer> {
     ArrayList<FeedItem> findAll();
 
-    ArrayList<FeedItem> findAllByOrOrderByDateTimeDesc();
+    ArrayList<FeedItem> findAllByOrderByDateTimeDesc();
 
     FeedItem findById(int id);
 }

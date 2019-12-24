@@ -26,7 +26,7 @@ public class FeedService {
 
     public ArrayList<WebFeedItem> getAllForWeb() {
         ArrayList<WebFeedItem> result = new ArrayList<>();
-        ArrayList<FeedItem> list = feedItemRepository.findAllByOrOrderByDateTimeDesc();
+        ArrayList<FeedItem> list = feedItemRepository.findAllByOrderByDateTimeDesc();
         list.forEach(feedItem -> result.add(
                 new WebFeedItem(
                         feedItem.getId(),
