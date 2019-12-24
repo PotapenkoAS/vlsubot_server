@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit</title>
+    <title>New</title>
     <link href="/content/style.css" rel="stylesheet">
     <script src="/scripts/edit.js"></script>
     <script src="/scripts/jquery.js"></script>
@@ -12,17 +12,16 @@
     <form method="post" enctype="multipart/form-data">
         <div class="containerTest">
             <div class="dws-input">
-                <input type="text" style="width: 450px" name="title" th:value="${item.title}" placeholder="Title">
+                <input type="text" style="width: 450px" name="title" placeholder="Title">
             </div>
             <div class="dws-input">
-                <input type="text" style="width: 450px; font-size: 16px; color: #1b6d85" name="url"
-                       th:value="${item.url}" placeholder="URL">
+                <input type="text" style="width: 450px; font-size: 16px; color: #1b6d85" name="url" placeholder="URL">
             </div>
             <div class="dws-input">
-                <textarea th:text="${item.text}" name="text" cols="48" rows="10" placeholder="Text"></textarea>
+                <textarea name="text" cols="48" rows="10" placeholder="Text"></textarea>
             </div>
 
-            <img id="imgView" class="image-view" th:src="*{'data:image/png;base64,' + image}" alt="">
+            <img id="imgView" class="image-view" alt="">
             <div class="dws-input">
                 <label class="image-download">
                     <input type="file" name="image" id="imageBox" onchange="readURL(this)">

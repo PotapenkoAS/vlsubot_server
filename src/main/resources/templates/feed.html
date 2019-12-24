@@ -7,6 +7,9 @@
 </head>
 <body>
 <div class="main">
+    <form action="/new_item" method="get">
+        <input type="submit" value="Create new" class="dws-submit">
+    </form>
     <div class="containerTest">
         <div class="row" th:each="item:${items}">
             <div style="padding: 15px">
@@ -16,7 +19,7 @@
                      alt="">
                 <p th:text="${item.getDateTime()}"></p>
                 <form method="get" th:action="'/edit/'+${item.getId()}">
-                    <input type="submit" value="Edit">
+                    <input type="submit" value="Edit" class="dws-submit">
                 </form>
                 <br>
                 <hr>

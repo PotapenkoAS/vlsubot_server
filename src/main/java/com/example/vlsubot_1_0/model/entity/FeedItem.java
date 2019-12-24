@@ -20,7 +20,7 @@ public class FeedItem {
     public FeedItem() {
     }
 
-    public FeedItem(int id, String title, String text, Timestamp dateTime, byte[] image, String url) {
+    public FeedItem(Integer id, String title, String text, Timestamp dateTime, byte[] image, String url) {
         this.id = id;
         this.title = title;
         this.text = text;
