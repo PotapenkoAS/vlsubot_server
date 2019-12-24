@@ -20,7 +20,7 @@ public class FeedService {
     }
 
     public ArrayList<FeedItem> getAll() {
-        return feedItemRepository.findAll();
+        return feedItemRepository.findAllByOrderByDateTimeDesc();
     }
 
 
