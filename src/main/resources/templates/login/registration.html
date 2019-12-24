@@ -12,14 +12,30 @@
         a:hover {
             text-decoration: none;
         }
+
         body:before {
             background: 0;
         }
     </style>
 </head>
 <body>
-<form method="post" >
-
+<form method="post">
+    <div class="containerLogin">
+        <form>
+            <span class="TextLogin"><p>Регистрация</p></span>
+            <input type="text" style="display: none">
+            <div class="dws-input">
+                <input type="text" name="username" placeholder="Введите логин">
+            </div>
+            <div class="dws-input">
+                <input type="password" name="password" placeholder="Введите пароль">
+            </div>
+            <div class="dws-input">
+                <input type="password" name="name" placeholder="Подтвердите пароль">
+            </div>
+            <input class="dws-submit" type="submit" name="submit" value="ВОЙТИ"><br/>
+        </form>
+    </div>
 </form>
 </body>
 </html>

@@ -7,4 +7,6 @@ import java.util.ArrayList;
 
 public interface FeedItemRepository extends CrudRepository<FeedItem, Integer> {
     ArrayList<FeedItem> findAll();
+
+    FeedItem findById(int id);
 }

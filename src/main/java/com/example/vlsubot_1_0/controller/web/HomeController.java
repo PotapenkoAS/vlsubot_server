@@ -11,8 +11,4 @@ public class HomeController {
         return "redirect:/feed";
     }
 
-    @GetMapping("/feed")
-    public String getFeed(){
-        return "home";
-    }
 }
