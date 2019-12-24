@@ -1,5 +1,7 @@
 package com.example.vlsubot_1_0.model.entity;
 
+import com.ibm.watson.natural_language_understanding.v1.model.Feed;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Arrays;
@@ -14,6 +16,18 @@ public class FeedItem {
     private Timestamp dateTime;
     private byte[] image;
     private String url;
+
+    public FeedItem() {
+    }
+
+    public FeedItem(int id, String title, String text, Timestamp dateTime, byte[] image, String url) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+        this.dateTime = dateTime;
+        this.image = image;
+        this.url = url;
+    }
 
     @Id
     @Column(name = "id")

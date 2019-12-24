@@ -9,21 +9,25 @@
 </head>
 <body>
 <div class="main">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="containerTest">
             <div class="dws-input">
-                <input type="text" name="title" th:value="${item.title}">
+                <input type="text" style="width: 450px" name="title" th:value="${item.title}">
             </div>
             <div class="dws-input">
-                <textarea name="text" th:value="${item.text}"></textarea>
+                <input type="text" style="width: 450px; font-size: 18px; color: #1b6d85" name="url" th:value="${item.url}">
             </div>
-            <img id="imgView" th:src="*{'data:image/png;base64,' + image}" alt="">
+            <div class="dws-input">
+                <textarea th:text="${item.text}" name="text" cols="48" rows="10"></textarea>
+            </div>
+
+            <img id="imgView" class="image-view" th:src="*{'data:image/png;base64,' + image}" alt="">
             <div class="dws-input">
                 <label class="image-download">
                     <input type="file" name="image" id="imageBox" onchange="readURL(this)">
                 </label>
             </div>
-
+            <input type="submit" class="dws-submit">
         </div>
     </form>
 </div>

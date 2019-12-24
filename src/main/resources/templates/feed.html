@@ -12,9 +12,12 @@
             <div style="padding: 15px">
                 <p th:utext="${item.title}"></p>
                 <p th:utext="${item.text}"></p>
-                <img th:src="*{'data:image/png;base64,'+item.getImage()}" alt="">
+                <img th:src="*{'data:image/png;base64,'+item.getImage()}" style="max-width: 1280px; max-height: 720px"
+                     alt="">
                 <p th:text="${item.getDateTime()}"></p>
-                <input type="button" value="Edit" th:href="'/edit/'+${item.getId()}">
+                <form method="get" th:action="'/edit/'+${item.getId()}">
+                    <input type="submit" value="Edit">
+                </form>
                 <br>
                 <hr>
             </div>

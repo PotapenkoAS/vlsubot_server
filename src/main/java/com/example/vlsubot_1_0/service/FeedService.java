@@ -38,9 +38,12 @@ public class FeedService {
         return result;
     }
 
-    public FeedItem getById(int id){
+    public FeedItem getById(int id) {
         return feedItemRepository.findById(id);
     }
 
 
+    public FeedItem save(FeedItem item) {
+        return feedItemRepository.save(item);
+    }
 }
