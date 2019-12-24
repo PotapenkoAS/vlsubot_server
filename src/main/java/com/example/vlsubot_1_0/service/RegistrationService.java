@@ -57,7 +57,6 @@ public class RegistrationService {
     }
 
     private Student createNewStudent(RegistrationRequest userRequest, Integer userId, Integer groupId) {
-
         return new Student(
                 userRequest.getUser().getFirstName(),
                 userRequest.getUser().getLastName(),

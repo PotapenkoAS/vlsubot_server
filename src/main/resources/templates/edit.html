@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <title>Edit</title>
     <link href="/content/style.css" rel="stylesheet">
+    <script src="/scripts/edit.js"></script>
+    <script src="/scripts/jquery.js"></script>
 </head>
 <body>
 <div class="main">
     <form method="post">
         <div class="containerTest">
             <div class="dws-input">
-                <input type="text" name="title">
+                <input type="text" name="title" th:value="${item.title}">
             </div>
             <div class="dws-input">
-                <input type="text" name="text">
+                <textarea name="text" th:value="${item.text}"></textarea>
             </div>
+            <img id="imgView" th:src="*{'data:image/png;base64,' + image}" alt="">
             <div class="dws-input">
-                <input type="date" name="dateTime">
-            </div>
-            <div class="dws-input">
-                <input type="file" name="image">
+                <label class="image-download">
+                    <input type="file" name="image" id="imageBox" onchange="readURL(this)">
+                </label>
             </div>
 
         </div>
