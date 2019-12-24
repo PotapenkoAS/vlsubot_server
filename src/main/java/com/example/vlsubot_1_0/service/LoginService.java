@@ -1,6 +1,7 @@
 package com.example.vlsubot_1_0.service;
 
 import com.example.vlsubot_1_0.model.commonObject.CustomUserDetails;
+import com.example.vlsubot_1_0.model.commonObject.requestObject.DeviceIdRequest;
 import com.example.vlsubot_1_0.model.commonObject.requestObject.LoginCredentialsRequest;
 import com.example.vlsubot_1_0.model.commonObject.responseObject.StudentResponse;
 import com.example.vlsubot_1_0.model.entity.Student;
@@ -15,6 +16,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.ArrayList;
 
 @Service
@@ -23,6 +27,8 @@ public class LoginService {
     private UserRepository userRepository;
     private StudentRepository studentRepository;
     private Mapper mapper;
+    @PersistenceContext
+    private EntityManager em;
 
     @Autowired
     public LoginService(UserRepository userRepository, StudentRepository studentRepository, Mapper mapper) {
@@ -72,5 +78,17 @@ public class LoginService {
             return false;
         }
 
+    }
+
+    public Boolean signOut(DeviceIdRequest deviceId) {
+        try {
+            Query query = em.createQuery("update Student set deviceId=null where deviceId =:deviceId");
+            query.setParameter("deviceId", deviceId);
+            query.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

@@ -29,4 +29,9 @@ public class LoginRestController {
     public StudentResponse postAutoLogin(@RequestBody DeviceIdRequest deviceId) {
         return loginService.autoLoginStudent(deviceId.getDeviceId());
     }
+
+    @PostMapping("/sign_out")
+    public Boolean signOut(@RequestBody DeviceIdRequest deviceId) {
+        return loginService.signOut(deviceId);
+    }
 }
