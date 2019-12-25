@@ -83,7 +83,7 @@ public class LoginService {
     public Boolean signOut(DeviceIdRequest deviceId) {
         try {
             Query query = em.createQuery("update Student set deviceId=null where deviceId =:deviceId");
-            query.setParameter("deviceId", deviceId);
+            query.setParameter("deviceId", deviceId.getDeviceId());
             query.executeUpdate();
             return true;
         } catch (Exception e) {
