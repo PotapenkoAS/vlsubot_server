@@ -15,6 +15,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -80,6 +81,7 @@ public class LoginService {
 
     }
 
+    @Transactional
     public Boolean signOut(DeviceIdRequest deviceId) {
         try {
             Query query = em.createQuery("update Student set deviceId=null where deviceId =:deviceId");
